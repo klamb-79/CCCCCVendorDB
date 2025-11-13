@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-brand">
+                <a href="index.html">VendorFlow 🚀</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Vendor List</a>
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="nav-actions">
+                <div id="current-user" class="nav-user"></div>
+                <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+            </div>
+        </nav>
+
+        <header>
+            <h1>User Admin Management</h1>
+        </header>
+
+        <main id="user-list-container">
+            </main>
+    </div>
+
+    <div id="overlay-backdrop" style="display: none;"></div>
+    <div id="side-overlay">
+        <button id="close-overlay-btn">&times;</button>
+        <div class="overlay-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html">Vendor List</a>
+            <a href="admin.html">User Admin</a> <a href="/api/logout">Logout</a>
+        </div>
+    </div>
+    
+    <script src="nav.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

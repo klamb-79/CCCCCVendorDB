@@ -1,0 +1,303 @@
+[
+  {
+    "id": 1,
+    "name": "Global Tech Solutions",
+    "category": "IT",
+    "country": "Belize",
+    "contact": {
+      "phone": "555-0101",
+      "email": "contacts@gmail.com"
+    },
+    "vendorType": "Both",
+    "comparosionDate": "2025-08-01",
+    "comparasionDateExpire": "2026-01-28",
+    "comparasionDaysLeft": 155,
+    "amlDate": "2025-08-01",
+    "amlDateExpire": "2026-08-01",
+    "amlDaysLeft": 340
+  },
+  {
+    "id": 2,
+    "name": "Delicious Bites Catering",
+    "category": "Catering",
+    "country": "Belize",
+    "contact": {
+      "phone": "555-0102",
+      "email": "orders@deliciousbites.com"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Cozy Stay Hotels",
+    "category": "Accommodation",
+    "country": "Belize",
+    "contact": {
+      "phone": "555-0103",
+      "email": "booking@cozystay.com"
+    }
+  },
+  {
+    "id": 4,
+    "name": "SecureIT Cybersecurity",
+    "category": "IT",
+    "country": "Belize",
+    "contact": {
+      "phone": "555-0104",
+      "email": "support@secureit.com"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Office Supplies Express",
+    "category": "Other",
+    "country": "Belize",
+    "contact": {
+      "phone": "555-0105",
+      "email": "sales@officesupplies.com"
+    }
+  },
+  {
+    "id": 1752469921984,
+    "name": "Fultec",
+    "category": "IT",
+    "country": "Belize",
+    "contact": {
+      "phone": "8220482",
+      "email": "klamb@fultec.com"
+    }
+  },
+  {
+    "id": 1753669546084,
+    "name": "Keron Lamb",
+    "category": "electronics",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1753763485235,
+    "name": "Keron Lamb",
+    "category": "IT",
+    "country": "United States",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1753763526131,
+    "name": "Brian",
+    "category": "Supplies",
+    "country": "Germany",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1753765839066,
+    "name": "Keron Lamb",
+    "category": "Personal",
+    "country": "Jamacia",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1754604333002,
+    "name": "GS.Com",
+    "comparosionDate": "2025-04-01",
+    "vendorType": "3",
+    "amlDate": "2025-01-01",
+    "category": "IT",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1754605095758,
+    "name": "Pletts",
+    "comparosionDate": "2025-08-01",
+    "vendorType": "Purchase Order",
+    "amlDate": "2025-01-01",
+    "category": "Accommodation",
+    "country": "Jamacia",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    },
+    "comparisonDate": ""
+  },
+  {
+    "id": 1754690334297,
+    "name": "99",
+    "comparosionDate": "2025-08-01",
+    "comparasionDateExpire": "2025-08-01180",
+    "vendorType": "Contract",
+    "amlDate": "2025-08-01",
+    "category": "Accommodation",
+    "country": "Jamacia",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1754691219420,
+    "name": "Keron Lamb",
+    "comparosionDate": "2025-08-01",
+    "comparasionDateExpire": "2026-01-28",
+    "vendorType": "Purchase Order",
+    "amlDate": "2025-08-15",
+    "category": "Accommodation",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1754691737057,
+    "name": "Wings",
+    "comparosionDate": "2024-02-20",
+    "comparasionDateExpire": "2024-08-18",
+    "vendorType": "Purchase Order",
+    "amlDate": "2025-09-01",
+    "amlDateExpire": "2026-09-01",
+    "category": "Catering",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    },
+    "comparasionDaysLeft": 0,
+    "amlDaysLeft": 358
+  },
+  {
+    "id": 1754712525021,
+    "name": "Keron Lamb",
+    "comparosionDate": "2025-08-19",
+    "comparasionDateExpire": "2026-02-15",
+    "vendorType": "Contract",
+    "amlDate": "2025-01-08",
+    "amlDateExpire": "2026-01-08",
+    "category": "Travel",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    },
+    "comparisonDate": "",
+    "comparasionDaysLeft": 179,
+    "amlDaysLeft": 141
+  },
+  {
+    "id": 1754713032119,
+    "name": "Keron Lamb",
+    "comparosionDate": "2025-08-19",
+    "comparasionDateExpire": "2026-02-15",
+    "vendorType": "Both",
+    "amlDate": "2025-01-08",
+    "amlDateExpire": "2026-01-08",
+    "amlDaysLeft": 141,
+    "category": "Shipping",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    },
+    "comparasionDaysLeft": 179
+  },
+  {
+    "id": 1754713310241,
+    "name": "Keron Lamb",
+    "comparosionDate": "2025-08-01",
+    "comparasionDateExpire": "2026-01-28",
+    "vendorType": "Contract",
+    "amlDate": "2025-01-08",
+    "amlDateExpire": "2026-01-08",
+    "amlDaysLeft": 145,
+    "category": "Construction",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    },
+    "comparasionDaysLeft": 165
+  },
+  {
+    "id": 1754713499014,
+    "name": "Tas Belize",
+    "comparosionDate": "2024-02-22",
+    "comparasionDateExpire": "2024-08-20",
+    "comparasionDaysLeft": 367,
+    "vendorType": "Both",
+    "amlDate": "2025-02-02",
+    "amlDateExpire": "2026-02-02",
+    "amlDaysLeft": 164,
+    "category": "Catering",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb2025@gmail.com"
+    },
+    "comparisonDate": "2025-05-30"
+  },
+  {
+    "id": 1756224576459,
+    "name": "BCS",
+    "comparosionDate": "2024-08-01",
+    "comparasionDateExpire": "2025-01-28",
+    "comparasionDaysLeft": 0,
+    "vendorType": "Both",
+    "amlDate": "2025-08-01",
+    "amlDateExpire": "2026-08-01",
+    "amlDaysLeft": 334,
+    "category": "IT",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    },
+    "amlDocs": "https://cccccbze.sharepoint.com/sites/5C-DocumentsCenter/Documents/Forms/AllItems.aspx?id=%2Fsites%2F5C%2DDocumentsCenter%2FDocuments%2FPR%2DFINANCE&viewpath=%2Fsites%2F5C%2DDocumentsCenter%2FDocuments%2FForms%2FAllItems%2Easpx"
+  },
+  {
+    "id": 1756228904808,
+    "name": "Keron Lamb",
+    "comparosionDate": "2025-08-01",
+    "comparasionDateExpire": "27/01/2026",
+    "comparasionDaysLeft": null,
+    "vendorType": "Contract",
+    "amlDate": "2025-08-01",
+    "amlDateExpire": "31/07/2026",
+    "amlDaysLeft": null,
+    "category": "IT",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  },
+  {
+    "id": 1756237391560,
+    "name": "Keron Lamb",
+    "comparosionDate": "2025-08-01",
+    "comparasionDateExpire": "2026-01-28",
+    "comparasionDaysLeft": 84,
+    "vendorType": "Contract",
+    "amlDate": "2025-08-01",
+    "amlDateExpire": "2026-08-01",
+    "amlDaysLeft": 269,
+    "category": "Travel",
+    "country": "Belize",
+    "contact": {
+      "phone": "6153524",
+      "email": "keronlamb@gmail.com"
+    }
+  }
+]

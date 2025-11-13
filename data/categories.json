@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "IT"
+  },
+  {
+    "id": 2,
+    "name": "Catering"
+  },
+  {
+    "id": 3,
+    "name": "Accommodation"
+  },
+  {
+    "id": 4,
+    "name": "Other"
+  },
+  {
+    "id": 1752469792790,
+    "name": "Travel"
+  },
+  {
+    "id": 1752806952195,
+    "name": "Venue"
+  },
+  {
+    "id": 1752806963963,
+    "name": "Hardware"
+  },
+  {
+    "id": 1752806976564,
+    "name": "Shipping"
+  },
+  {
+    "id": 1752807021100,
+    "name": "Furniture"
+  },
+  {
+    "id": 1752807033849,
+    "name": "Construction"
+  },
+  {
+    "id": 1752807071222,
+    "name": "Supplies"
+  },
+  {
+    "id": 1752807085551,
+    "name": "Automotive"
+  },
+  {
+    "id": 1752807100127,
+    "name": "Branding"
+  },
+  {
+    "id": 1753664631988,
+    "name": "Personal"
+  },
+  {
+    "id": 1753828989752,
+    "name": "Refrigeration"
+  }
+]

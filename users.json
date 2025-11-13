@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1761929182117,
+    "username": "klamb",
+    "password": "$2b$10$m6ZPP0H1tgCmX52Wj2m4kuteT9ieXCF.xAxMN8CekfPv8XKP7dRte",
+    "permission": "admin"
+  },
+  {
+    "id": 1762197971155,
+    "username": "jlamb",
+    "password": "$2b$10$cQoFINyzCOa4Qsp1iRJVXust5vxou/4aGB45ES2atpqMu03RZrbzi",
+    "permission": "viewer"
+  }
+]

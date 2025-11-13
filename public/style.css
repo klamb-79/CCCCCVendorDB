@@ -1,0 +1,689 @@
+/* General Body & Container Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    /*max-width: 900px;*/
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+/* Modify the existing nav rule */
+nav {
+    background-color: #fff;
+    padding: 10px 25px;
+    /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    display: flex;
+    /* Key for layout */
+    justify-content: space-between;
+    /* Pushes items to ends and middle */
+    align-items: center;
+    /* Vertically aligns items */
+}
+
+/* Remove the old rule for nav a */
+/* nav a { ... } */
+
+/* NEW: Style the brand/app name */
+.nav-brand a {
+    text-decoration: none;
+    color: #333;
+    font-size: 2.5em;
+    /* Larger font size */
+    font-weight: bold;
+}
+
+/* NEW: Style the container for the middle links */
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #e9ecef;
+}
+
+/* Remove the old rule for nav a.active */
+/* nav a.active { ... } */
+
+/* NEW: Style the settings icon button */
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    /* Make the emoji icon larger */
+    padding: 5px;
+    line-height: 1;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+    color: #000;
+}
+
+nav a.active {
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    color: #444;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+/* Vendor List & Cards (index.html) */
+#vendor-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.vendor-card {
+    background-color: #F5F5F5;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.vendor-header {
+    border-radius: 12px;
+    background-color: #a6f2f3;
+}
+
+.vendor-card h3 {
+    margin-top: 0;
+    color: #0056b3;
+    text-align: center;
+}
+
+.vendor-card .category {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.vendor-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.main-container-add-country {
+    display: flex;
+    justify-content: center;
+
+    min-height: 20vh;
+    /* Ensure it takes up enough vertical space */
+}
+
+#country-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    /* Ensure it takes up enough vertical space */
+}
+
+.main-container-add-category {
+    display: flex;
+    justify-content: center;
+    min-height: 25vh;
+    /* Ensure it takes up enough vertical space */
+}
+
+#category-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    /* Ensure it takes up enough vertical space */
+}
+
+/* Form Styling (add-vendor.html) */
+.main-container-add-vendor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    /* Ensure it takes up enough vertical space */
+}
+
+
+
+form {
+    width: 440px;
+    background: #fff;
+    padding: 30px;
+    padding-top: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+
+label.form-label {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+h5.form-label {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Important for padding */
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Controls (Filter) */
+.controls {
+    margin-top: 10px;
+}
+
+#category-filter {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Controls (Filter & Search) */
+.controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+#category-filter,
+#search-bar,
+#country-filter {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#search-bar {
+    width: 220px;
+    /* Or any desired width */
+}
+
+/* ... all previous CSS ... */
+
+/* Item List for Categories */
+.item-list {
+    width: 800px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.item-list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.item-list-row:last-child {
+    border-bottom: none;
+}
+
+.item-list-row span {
+    font-weight: 500;
+}
+
+.btn-delete {
+    padding: 6px 12px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* NEW: Vendor Card Details Button */
+.vendor-card-actions {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    padding-right: 10px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-details {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 1em;
+    background: #60d4f5;
+    cursor: pointer;
+    border: 1px solid #60d4f5;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+
+    /*padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;*/
+}
+
+.btn-details:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+
+    /*background-color: #0056b3;*/
+}
+
+
+/* NEW: Modal Overlay Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+#modal-body h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+#modal-body p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Styles for the edit form within the modal */
+.modal-edit-form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-edit-form .form-group label {
+    font-weight: bold;
+}
+
+.modal-edit-form .form-group input,
+.modal-edit-form .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    text-align: right;
+    padding: 10px 15;
+}
+
+.modal-actions .btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+/* ... (all previous CSS) ... */
+
+/* NEW: Side Overlay Styles */
+#side-overlay {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* Start off-screen */
+    width: 280px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    z-index: 1002;
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#side-overlay.is-open {
+    right: 0;
+    /* Slide into view */
+}
+
+#close-overlay-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.overlay-links {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    padding: 15px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.overlay-links a:hover {
+    background-color: #f4f4f4;
+}
+
+/* NEW: Backdrop for the overlay */
+#overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    /* display is controlled by JS */
+}
+
+/* NEW: Dashboard Layout Styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 25px;
+}
+
+.stat-card:nth-child(1) {
+    grid-column: span 1;
+}
+
+.stat-card:nth-child(2) {
+    grid-column: span 1;
+}
+
+.stat-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* Let the last one span full width */
+
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        /* Single column on smaller screens */
+    }
+
+    .stat-card:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    /* Reset span on smaller screens */
+}
+
+.stat-card,
+.chart-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    margin: 0 0 10px 0;
+    color: #6c757d;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.stat-number {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.chart-card {
+    /* Make chart card span full width on larger screens if needed */
+    grid-column: 1 / -1;
+    min-height: 400px;
+    /* Give the chart space */
+}
+
+.chart-card h3 {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+/*button home page test*/
+#type-filter-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    height: 40px;
+    width: 150px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #333;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.type1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #333;
+    border-radius: 30px;
+    visibility: hidden;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+}
+
+.button:hover {
+    box-shadow: 1px 1px 200px #252525;
+    color: #fff;
+    border: none;
+}
+
+.type1:hover::after {
+    visibility: visible;
+    transform: scale(100) translateX(2px);
+}
+
+div .status-active {
+    color: #28a745;
+    /* Green color */
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* NEW: Styles for the "Expired" status */
+div .status-expired {
+    color: #dc3545;
+    /* Red color */
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.main-container-mang-categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    /* Ensure it takes up enough vertical space */
+}
+
+
+
+/* Optional: Style the entire card if it's expired */
+/*.expired-vendor {
+    background-color: #f8f9fa; /* Light grey background 
+    opacity: 0.8;
+}*/
+
+/* UPDATED: Nav actions to align items */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* NEW: Style for the user welcome message */
+.nav-user {
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+}

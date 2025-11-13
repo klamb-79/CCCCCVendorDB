@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VendorFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-brand">
+                <a href="index.html">VendorFlow 🚀</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Vendor List</a>
+                <a href="add-vendor.html">Add New Vendor</a>
+                <a href="categories.html">Manage Categories</a>
+            </div>
+            <div class="nav-actions">
+                <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Dashboard</h1>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Stat Cards -->
+            <div class="stat-card">
+                <h3>Total Vendors</h3>
+                <p id="total-vendors-stat" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Categories</h3>
+                <p id="total-categories-stat" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Top Country</h3>
+                <p id="top-country-stat" class="stat-number">-</p>
+            </div>
+
+            <!-- Chart Card -->
+            <div class="chart-card">
+                <h3>Vendors by Category</h3>
+                <canvas id="category-pie-chart"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <!-- Side Overlay Menu and Scripts -->
+    <div id="overlay-backdrop" style="display: none;"></div>
+    <div id="side-overlay">
+        <button id="close-overlay-btn">&times;</button>
+        <div class="overlay-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html">Vendor List</a>
+            <a href="add-vendor.html">Add New Vendor</a>
+            <a href="categories.html">Manage Categories</a>
+            <a href="add-category.html">Add New Category</a>
+        </div>
+    </div>
+
+    <script src="nav.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
