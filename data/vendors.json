@@ -35,7 +35,7 @@
       "phone": "555-0103",
       "email": "booking@cozystay.com"
     },
-    "vendorType": "Contract",
+    "vendorType": "Purchase Order",
     "comparosionDate": "2026-02-15",
     "comparasionDateExpire": "2026-08-14",
     "comparasionDaysLeft": 166,
