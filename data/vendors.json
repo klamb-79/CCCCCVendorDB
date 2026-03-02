@@ -55,13 +55,20 @@
   },
   {
     "id": 5,
-    "name": "Office Supplies Express",
+    "name": "Office Supplies Express LTD",
     "category": "Other",
     "country": "Belize",
     "contact": {
       "phone": "555-0105",
       "email": "sales@officesupplies.com"
-    }
+    },
+    "vendorType": "undefined",
+    "comparosionDate": "2026-01-01",
+    "comparasionDateExpire": "2026-06-30",
+    "comparasionDaysLeft": 120,
+    "amlDate": "2026-01-01",
+    "amlDateExpire": "2027-01-01",
+    "amlDaysLeft": 305
   },
   {
     "id": 1752469921984,
