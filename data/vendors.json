@@ -34,7 +34,14 @@
     "contact": {
       "phone": "555-0103",
       "email": "booking@cozystay.com"
-    }
+    },
+    "vendorType": "Purchase Order",
+    "comparosionDate": "2026-02-15",
+    "comparasionDateExpire": "2026-08-14",
+    "comparasionDaysLeft": 166,
+    "amlDate": "2026-01-01",
+    "amlDateExpire": "2027-01-01",
+    "amlDaysLeft": 306
   },
   {
     "id": 4,
