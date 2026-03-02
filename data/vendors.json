@@ -28,7 +28,7 @@
   },
   {
     "id": 3,
-    "name": "Cozy Stay Hotels",
+    "name": "Cozy Stay Hotels25",
     "category": "Accommodation",
     "country": "Belize",
     "contact": {
@@ -38,10 +38,10 @@
     "vendorType": "Purchase Order",
     "comparosionDate": "2026-02-15",
     "comparasionDateExpire": "2026-08-14",
-    "comparasionDaysLeft": 166,
+    "comparasionDaysLeft": 165,
     "amlDate": "2026-01-01",
     "amlDateExpire": "2027-01-01",
-    "amlDaysLeft": 306
+    "amlDaysLeft": 305
   },
   {
     "id": 4,
