@@ -25,12 +25,13 @@ def automate_deployment():
 
     # 1. STOP the Node.js server
     # On Windows: Taskkill by image name. On Linux/Mac: 'pkill node'
+    
     if os.name == 'nt':
         run_command("taskkill /f /im node.exe", "Stopping Node.js (Windows)")
     else:
         run_command("pkill node", "Stopping Node.js (Linux/Mac)")
 
-    # 2. PUSH changes to GitHub
+
     run_command("git add .", "Staging changes")
     run_command('git commit -m "Automated update before restart"', "Committing changes")
     if run_command(f"git push origin {GIT_BRANCH}", "Pushing to GitHub"):
@@ -39,11 +40,12 @@ def automate_deployment():
         print("❌ Push failed, but proceeding with restart...")
 
     # 3. RESTART the Node.js server
-    print("--- Restarting Node.js ---")
+   # print("--- Restarting Node.js ---")
     # Use subprocess.Popen so the script doesn't hang waiting for the server to close
-    subprocess.Popen(["node", NODE_APP_PATH], shell=True)
+    #subprocess.Popen(["node", NODE_APP_PATH], shell=True)
     
-    print(f"🚀 Deployment complete! {NODE_APP_PATH} is running.")
+    #print(f"🚀 Deployment complete! {NODE_APP_PATH} is running.")
+    
 
 if __name__ == "__main__":
     automate_deployment()
