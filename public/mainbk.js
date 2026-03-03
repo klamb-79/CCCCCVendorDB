@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <span class="country-tag">${vendor.country}</span>
             </p>
             <p><strong>Type:</strong> ${vendor.vendorType}</p>
-            <p><strong>Phone:</strong> ${vendor.phone}</p>
-            <p><strong>Email:</strong> ${vendor.email}</p>
+            <p><strong>Phone:</strong> ${vendor.contact.phone}</p>
+            <p><strong>Email:</strong> ${vendor.contact.email}</p>
             <div class="vendor-card-actions">
                 <button class="btn-details" data-id="${vendor.id}">View</button>
             </div>
@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             <p><strong>AML Date:</strong> ${vendor.amlDate}</p>
             <p><strong>AML Date Expire:</strong> ${vendor.amlDateExpire}</p>
             <p><strong>AML Days Left:</strong> ${vendor.amlDaysLeft}</p>
-            <p><strong>Phone:</strong> ${vendor.phone}</p>
-            <p><strong>Email:</strong> ${vendor.email}</p>
+            <p><strong>Phone:</strong> ${vendor.contact.phone}</p>
+            <p><strong>Email:</strong> ${vendor.contact.email}</p>
             <p><strong>Supporting Docs:</strong> <a href="${vendor.amlDocs}" target="_blank">Supporting Docs</a></p>
             <div class="modal-actions">
                 ${editButtonHtml}
@@ -245,11 +245,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
                 <div class="form-group">
                     <label for="edit-phone">Phone</label>
-                    <input type="tel" id="edit-phone" value="${vendor.phone}" required>
+                    <input type="tel" id="edit-phone" value="${vendor.contact.phone}" required>
                 </div>
                 <div class="form-group">
                     <label for="edit-email">Email</label>
-                    <input type="email" id="edit-email" value="${vendor.email}" required>
+                    <input type="email" id="edit-email" value="${vendor.contact.email}" required>
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn btn-cancel">Cancel</button><br>
@@ -308,9 +308,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             amlDateExpire: editAmlExpireDate,
             amlDaysLeft: daysRemaining(editAmlExpireDate),
             category: document.getElementById('edit-category').value,
-            phone: document.getElementById('edit-phone').value,
-            email: document.getElementById('edit-email').value,
-            
+            contact: {
+                phone: document.getElementById('edit-phone').value,
+                email: document.getElementById('edit-email').value,
+            }
         };
         //console.log('Updated Vendor:', updatedVendor);
 
