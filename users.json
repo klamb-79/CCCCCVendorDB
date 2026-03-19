@@ -9,6 +9,12 @@
     "id": 1773951141154,
     "username": "zayala",
     "password": "$2b$10$JwYDMI/2db65kqsFXmsPXOOWn2gZeiSbEnQ9RTmJuyZiB/p5aqXYy",
+    "permission": "admin"
+  },
+  {
+    "id": 1773954425043,
+    "username": "judah",
+    "password": "$2b$10$tRtTq8h/Qx99bttCQGZqU.w.H53mku6aQBKlXtD7nOqVs7.yL3Oca",
     "permission": "viewer"
   }
 ]
