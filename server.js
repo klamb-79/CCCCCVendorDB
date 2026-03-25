@@ -216,6 +216,26 @@ app.get('/api/users', isAuthenticated, isAdmin, async (req, res) => {
     res.json(safeUsers);
 });
 
+app.put('/api/users/:id', isAuthenticated, isAdmin, async (req, res) => {
+    const idToUpdate = parseInt(req.params.id, 10);
+    const { permission } = req.body;
+
+    if (!permission) {
+        return res.status(400).json({ message: 'Permission is required.' });
+    }
+
+    const users = await readUsers();
+    const userIndex = users.findIndex(u => u.id === idToUpdate);
+    
+    if (userIndex === -1) {
+        return res.status(404).json({ message: 'User not found.' });
+    }
+
+    users[userIndex].permission = permission;
+    await writeUsers(users);
+    res.status(200).json(users[userIndex]);
+});
+
 app.put('/api/vendors/:id', isAuthenticated, isEditorOrAdmin, async (req, res) => {
     try {
         const idToUpdate = parseInt(req.params.id, 10);
