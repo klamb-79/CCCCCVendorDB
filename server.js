@@ -129,6 +129,35 @@ const isEditorOrAdmin = (req, res, next) => {
     res.status(403).json({ message: 'You do not have permission to perform this action.' });
 };
 
+app.put('/api/users/:id/reset-password', isAuthenticated, isAdmin, async (req, res) => {
+    try {
+        const idToUpdate = parseInt(req.params.id, 10);
+        const { newPassword } = req.body;
+
+        if (!newPassword || newPassword.length < 6) {
+            return res.status(400).json({ message: 'Password must be at least 6 characters long.' });
+        }
+
+        const users = await readUsers();
+        const userIndex = users.findIndex(u => u.id === idToUpdate);
+
+        if (userIndex === -1) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        // Hash the new password before saving
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        users[userIndex].password = hashedPassword;
+
+        await writeUsers(users);
+        res.status(200).json({ message: 'Password reset successfully.' });
+
+    } catch (error) {
+        console.error('Error resetting password:', error);
+        res.status(500).json({ message: 'Server error while resetting password.' });
+    }
+});
+
 // NEW: Endpoint to get the current user's info
 
 
@@ -438,6 +467,35 @@ app.put('/api/vendors/:id', async (req, res) => {
     } catch (error) {
         console.error('Error updating vendor:', error);
         res.status(500).json({ message: 'Server error while updating vendor.' });
+    }
+});
+
+app.put('/api/users/:id/reset-password', isAuthenticated, isAdmin, async (req, res) => {
+    try {
+        const idToUpdate = parseInt(req.params.id, 10);
+        const { newPassword } = req.body;
+
+        if (!newPassword || newPassword.length < 6) {
+            return res.status(400).json({ message: 'Password must be at least 6 characters long.' });
+        }
+
+        const users = await readUsers();
+        const userIndex = users.findIndex(u => u.id === idToUpdate);
+
+        if (userIndex === -1) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        // Hash the new password before saving
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        users[userIndex].password = hashedPassword;
+
+        await writeUsers(users);
+        res.status(200).json({ message: 'Password reset successfully.' });
+
+    } catch (error) {
+        console.error('Error resetting password:', error);
+        res.status(500).json({ message: 'Server error while resetting password.' });
     }
 });
 

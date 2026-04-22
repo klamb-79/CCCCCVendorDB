@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     select.appendChild(option);
                 });
+                // NEW: Reset Password Button
+                const resetBtn = document.createElement('button');
+                resetBtn.className = 'btn-reset';
+                resetBtn.textContent = 'Reset PW';
+                resetBtn.dataset.id = user.id;
+                resetBtn.dataset.username = user.username;
+                listItem.appendChild(resetBtn);
 
                 // NEW: Delete button
                 const deleteBtn = document.createElement('button');
@@ -48,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 listItem.appendChild(deleteBtn);
                 list.appendChild(listItem);
             });
+
             userListContainer.appendChild(list);
         } catch (error) {
             console.error('Error fetching users:', error);
@@ -77,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderUsers(); // Re-render to show correct state
             }
         }
+        
     });
-    // NEW: Event listener for deleting a user
+    //NEW: Event listener for deleting a user
     userListContainer.addEventListener('click', async (event) => {
         if (event.target.classList.contains('btn-delete')) {
             const userId = event.target.dataset.id;
@@ -102,7 +111,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+        if (event.target.classList.contains('btn-reset')) {
+            const userId = event.target.dataset.id;
+            const username = event.target.dataset.username;
+            const newPassword = prompt(`Enter new password for ${username}:`);
+
+            if (newPassword) {
+                try {
+                    const response = await fetch(`/api/users/${userId}/reset-password`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ newPassword }),
+                    });
+                    
+
+                    const result = await response.json();
+                    if (response.ok) {
+                        alert('Password updated successfully!');
+                    } else {
+                        alert(result.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Failed to reset password.');
+                }
+            }
+        }
     });
+
+        
+    
+    
+
+    
 
     renderUsers();
 });

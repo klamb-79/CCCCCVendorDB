@@ -687,3 +687,31 @@ div .status-expired {
     font-weight: 500;
     font-size: 0.9rem;
 }
+.btn-reset {
+    padding: 6px 12px;
+    border: none;
+    background-color: #ffc107; /* Amber/Yellow color */
+    color: #212529;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-reset:hover {
+    background-color: #e0a800;
+}
+
+/* Ensure the row looks clean with multiple buttons */
+.item-list-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-list-row span {
+    flex-grow: 1; /* Pushes buttons to the right */
+}
