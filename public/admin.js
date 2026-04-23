@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ newPassword }),
                     });
-                    
+                    //test
 
                     const result = await response.json();
                     if (response.ok) {
