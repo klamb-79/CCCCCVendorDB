@@ -11,12 +11,13 @@ body {
     /*max-width: 900px;*/
     margin: 20px auto;
     padding: 0 20px;
+    background: linear-gradient(to bottom, #0e2666, #576a9c, #8795b8); 
 }
 
 /* Navigation Bar */
 /* Modify the existing nav rule */
 nav {
-    background-color: #fff;
+    background-color: #108686;
     padding: 10px 25px;
     /* Adjusted padding */
     border-radius: 8px;
@@ -110,7 +111,7 @@ header h1 {
 }
 
 .vendor-card {
-    background-color: #F5F5F5;
+    background-color: #f6f6fa;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 10px;
@@ -119,12 +120,12 @@ header h1 {
 
 .vendor-header {
     border-radius: 12px;
-    background-color: #a6f2f3;
+    background-color: #108686;
 }
 
 .vendor-card h3 {
     margin-top: 0;
-    color: #0056b3;
+    color: #dff4f5;
     text-align: center;
 }
 
@@ -350,11 +351,11 @@ h5.form-label {
     font-size: 14px;
     font-weight: bold;
     border-radius: 1em;
-    background: #60d4f5;
+    background: #fd9901;
     cursor: pointer;
-    border: 1px solid #60d4f5;
+    border: 1px solid #fd9901;
     transition: all 0.3s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
 
     /*padding: 8px 16px;
     border: none;

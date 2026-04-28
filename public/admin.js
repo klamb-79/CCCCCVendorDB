@@ -36,13 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     select.appendChild(option);
                 });
-                // NEW: Reset Password Button
-                const resetBtn = document.createElement('button');
-                resetBtn.className = 'btn-reset';
-                resetBtn.textContent = 'Reset PW';
-                resetBtn.dataset.id = user.id;
-                resetBtn.dataset.username = user.username;
-                listItem.appendChild(resetBtn);
+               
 
                 // NEW: Delete button
                 const deleteBtn = document.createElement('button');
@@ -54,6 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 listItem.appendChild(select);
                 listItem.appendChild(deleteBtn);
                 list.appendChild(listItem);
+
+                 // NEW: Reset Password Button
+                const resetBtn = document.createElement('button');
+                resetBtn.className = 'btn-reset';
+                resetBtn.textContent = 'Reset Password';
+                resetBtn.dataset.id = user.id;
+                resetBtn.dataset.username = user.username;
+                listItem.appendChild(resetBtn);
             });
 
             userListContainer.appendChild(list);
