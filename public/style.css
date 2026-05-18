@@ -1,8 +1,8 @@
 /* General Body & Container Styling */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #111111;
+    background-color: #fdfdfd;
+    color: #f7f6f6;
     margin: 0;
     line-height: 1.6;
 }
@@ -37,7 +37,7 @@ nav {
 /* NEW: Style the brand/app name */
 .nav-brand a {
     text-decoration: none;
-    color: #333;
+    color: #f7f7f7;
     font-size: 2.5em;
     /* Larger font size */
     font-weight: bold;

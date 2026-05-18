@@ -8,12 +8,13 @@ const { permission } = require('process');
 
 
 const app = express();
-const PORT = 3001; // Port for the server
+const PORT = 3003; // Port for the server
 const dataFolderPath = path.join(__dirname, 'data');
 const VENDORS_FILE = path.join(dataFolderPath, 'vendors.json');
 const CATEGORIES_FILE = path.join(dataFolderPath, 'categories.json'); // Path to new file
 const COUNTRIES_FILE = path.join(dataFolderPath, 'countries.json'); // Path to countries file
 const USERS_FILE = path.join(__dirname, 'users.json');
+
 
 app.use(cors()); // Enable CORS for all routes
 
@@ -356,6 +357,46 @@ app.post('/api/countries', async (req, res) => {
     } catch (error) {
         console.error('Error adding new country:', error);
         res.status(500).send('Server error while adding country.');
+    }
+});
+
+// --- Edit Country API (JSON Version) ---
+app.put('/api/countries/:id', isAuthenticated, isEditorOrAdmin, async (req, res) => {
+    try {
+        const idToUpdate = parseInt(req.params.id, 10);
+        const { newName } = req.body;
+
+        // Basic validation
+        if (!newName || newName.trim() === '') {
+            return res.status(400).json({ message: 'Country name cannot be empty.' });
+        }
+
+        // 1. Read the current data from the JSON file
+        const data = await fs.readFile(COUNTRIES_FILE, 'utf8');
+        let countries = JSON.parse(data);
+
+        // 2. Find the country you want to edit
+        const countryIndex = countries.findIndex(c => c.id === idToUpdate);
+
+        if (countryIndex === -1) {
+            return res.status(404).json({ message: 'Country not found.' });
+        }
+
+        // 3. Update the name
+        countries[countryIndex].name = newName.trim();
+
+        // 4. Save the updated list back to the JSON file
+        await fs.writeFile(COUNTRIES_FILE, JSON.stringify(countries, null, 2));
+
+        // 5. Send success response back to the frontend
+        res.status(200).json({ 
+            message: 'Country updated successfully.', 
+            country: countries[countryIndex] 
+        });
+
+    } catch (error) {
+        console.error('Error updating country:', error);
+        res.status(500).json({ message: 'Server error while updating country.' });
     }
 });
 
