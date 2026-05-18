@@ -2,7 +2,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f4f7f6;
-    color: #333;
+    color: #111111;
     margin: 0;
     line-height: 1.6;
 }
@@ -11,7 +11,7 @@ body {
     /*max-width: 900px;*/
     margin: 20px auto;
     padding: 0 20px;
-    background: linear-gradient(to bottom, #0e2666, #576a9c, #8795b8); 
+    /*background: linear-gradient(to bottom, #0e2666, #576a9c, #8795b8); */
 }
 
 /* Navigation Bar */
