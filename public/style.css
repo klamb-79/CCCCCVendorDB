@@ -600,7 +600,7 @@ h5.form-label {
 /*button home page test*/
 #type-filter-group {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -744,7 +744,7 @@ div .status-expired {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
+    
 }
 
 .counter-label {
