@@ -406,11 +406,11 @@ z" />
 			</div>
 
 			<div class="nav-actions">
-        <div id="current-user" class="nav-user"></div>
-			
-			<div class="nav-actions">
-				<button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
-			</div>
+				<div id="current-user" class="nav-user"></div>
+
+				<div class="nav-actions">
+					<button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+				</div>
 		</nav>
 
 		<header>
@@ -447,6 +447,12 @@ z" />
 							<option value="All">All</option>
 						</select>
 					</div>
+					<div class="counter-container">
+						<div class="counter-card">
+							<span class="counter-label">Vendors Found:</span>
+							<span id="vendor-count" class="counter-value">0</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -460,14 +466,14 @@ z" />
 
 	<!-- NEW: Modal Overlay for Vendor Details -->
 	<div id="vendor-modal" class="modal-overlay" style="display:none;">
-		
+
 		<div class="modal-content">
 			<button class="modal-close-btn">&times;</button>
-			
+
 			<div id="modal-body">
 				<input type="date" id="edit-comparasion-date" required>
 				<input type="date" id="edit-aml-date" required>
-				
+
 				<!-- Vendor details will be dynamically inserted here -->
 			</div>
 		</div>

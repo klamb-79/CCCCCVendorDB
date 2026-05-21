@@ -716,3 +716,44 @@ div .status-expired {
 .item-list-row span {
     flex-grow: 1; /* Pushes buttons to the right */
 }
+/* Counter Container Position */
+.counter-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Styled Card using your dark palette variables */
+.counter-card {
+    background-color: var(--bg-card); /* Secondary darker background */
+    border-left: 4px solid var(--brand-cyan); /* The sleek bright cyan brand accent */
+    padding: 12px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.counter-label {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+
+.counter-value {
+    color: var(--brand-cyan); /* Makes the digit visually striking */
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Style for empty searches */
+.no-results {
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+}

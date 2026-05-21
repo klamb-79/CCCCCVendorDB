@@ -12,10 +12,78 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closeModalBtn = document.querySelector('.modal-close-btn');
     const typeFilterGroup = document.getElementById('type-filter-group');
     let activeTypeFilter = 'All'; // Track the active type filter
+    const vendorCountElement = document.getElementById('vendor-count');
+    const searchInput = document.getElementById('search-input');
+    
 
-    let allVendors = []; // To store the master list of vendors
+    
     let allCategories = [];
+    let allVendors = [];
 
+    // --- 1. The Render Function ---
+    // This draws the rows AND automatically updates the counter element
+    const renderVendors = (vendorsToRender) => {
+        // UPDATE THE COUNTER: dynamically count the array passed in
+        if (vendorCountElement) {
+            vendorCountElement.textContent = vendorsToRender.length;
+        }
+
+        // Handle case where filter returns zero results
+        if (vendorsToRender.length === 0) {
+            vendorListContainer.innerHTML = '<p class="no-results">No vendors match your search criteria.</p>';
+            return;
+        }
+
+        // Clear out old content and rebuild the list UI
+        vendorListContainer.innerHTML = '';
+        const list = document.createElement('ul');
+        list.className = 'item-list';
+
+        vendorsToRender.forEach(vendor => {
+            const listItem = document.createElement('li');
+            listItem.className = 'item-list-row';
+            listItem.innerHTML = `
+                <span><strong>${vendor.name}</strong> - ${vendor.category}</span>
+                <button class="btn-view" data-id="${vendor.id}">View Details</button>
+            `;
+            list.appendChild(listItem);
+        });
+
+        vendorListContainer.appendChild(list);
+    };
+
+    // --- 2. Load Data from your JSON Backend ---
+    const loadVendors = async () => {
+        try {
+            const response = await fetch('/api/vendors');
+            if (!response.ok) return;
+            
+            allVendors = await response.json();
+            renderVendors(allVendors); // Initially pass ALL data (counter displays maximum count)
+        } catch (error) {
+            console.error('Error fetching vendors from JSON:', error);
+        }
+    };
+
+    // --- 3. The Search / Filter Input Event Listener ---
+    if (searchInput) {
+        searchInput.addEventListener('input', (event) => {
+            const searchTerm = event.target.value.toLowerCase();
+
+            // Filter down the master array
+            const filteredVendors = allVendors.filter(vendor => {
+                return (
+                    vendor.name.toLowerCase().includes(searchTerm) ||
+                    vendor.category.toLowerCase().includes(searchTerm)
+                );
+            });
+
+            // Re-render with only the filtered items (re-calculates count instantly)
+            renderVendors(filteredVendors);
+        });
+    }
+
+    loadVendors();
 
     // Fetches both vendors and categories from the server
     const fetchData = async () => {
@@ -50,6 +118,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             categoryFilter.appendChild(option);
         });
     };
+    
     // Populates the country dropdown from fetched data
     const populateCountryFilter = (countries) => {
         countryFilter.innerHTML = '<option value="All">All</option>'; // Reset
@@ -410,6 +479,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     });
+    
 
 
     // Initial data load
