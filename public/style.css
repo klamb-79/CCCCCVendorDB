@@ -325,6 +325,19 @@ h5.form-label {
     background-color: #dc3545;
     color: white;
     font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-edit {
+    padding: 6px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
