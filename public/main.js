@@ -12,17 +12,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closeModalBtn = document.querySelector('.modal-close-btn');
     const typeFilterGroup = document.getElementById('type-filter-group');
     let activeTypeFilter = 'All'; // Track the active type filter
-    const vendorCountElement = document.getElementById('vendor-count');
-    const searchInput = document.getElementById('search-input');
-    
+    const searchInput = document.getElementById('search-bar');
+    const vendorCountElement = document.getElementById('vendor-count'); // Hook into the counter HTML
 
-    
+    let allVendors = []; // To store the master list of vendors
     let allCategories = [];
-    let allVendors = [];
 
-    // --- 1. The Render Function ---
-    // This draws the rows AND automatically updates the counter element
-    const renderVendors = (vendorsToRender) => {
+const renderVendors = (vendorsToRender) => {
         // UPDATE THE COUNTER: dynamically count the array passed in
         if (vendorCountElement) {
             vendorCountElement.textContent = vendorsToRender.length;
@@ -118,7 +114,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             categoryFilter.appendChild(option);
         });
     };
-    
     // Populates the country dropdown from fetched data
     const populateCountryFilter = (countries) => {
         countryFilter.innerHTML = '<option value="All">All</option>'; // Reset
@@ -479,7 +474,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     });
-    
 
 
     // Initial data load
