@@ -400,6 +400,45 @@ app.put('/api/countries/:id', isAuthenticated, isEditorOrAdmin, async (req, res)
     }
 });
 
+app.put('/api/categories/:id', isAuthenticated, isEditorOrAdmin, async (req, res) => {
+    try {
+        const idToUpdate = parseInt(req.params.id, 10);
+        const { newName } = req.body;
+
+        // Basic validation
+        if (!newName || newName.trim() === '') {
+            return res.status(400).json({ message: 'Category name cannot be empty.' });
+        }
+
+        // 1. Read the current data from the JSON file
+        const data = await fs.readFile(CATEGORIES_FILE, 'utf8');
+        let categories = JSON.parse(data);
+
+        // 2. Find the category you want to edit
+        const categoryIndex = categories.findIndex(c => c.id === idToUpdate);
+
+        if (categoryIndex === -1) {
+            return res.status(404).json({ message: 'Category not found.' });
+        }
+
+        // 3. Update the name
+        categories[categoryIndex].name = newName.trim();
+
+        // 4. Save the updated list back to the JSON file
+        await fs.writeFile(CATEGORIES_FILE, JSON.stringify(categories, null, 2));
+
+        // 5. Send success response back to the frontend
+        res.status(200).json({ 
+            message: 'Category updated successfully.', 
+            category: categories[categoryIndex] 
+        });
+
+    } catch (error) {
+        console.error('Error updating category:', error);
+        res.status(500).json({ message: 'Server error while updating category.' });
+    }
+});
+
 // --- DELETE /api/categories/:id - Delete a category (NEW) ---
 app.delete('/api/categories/:id', async (req, res) => {
     try {

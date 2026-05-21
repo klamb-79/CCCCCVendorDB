@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 listItem.innerHTML = `
                     <span>${category.name}</span>
                     <button class="btn-delete" data-id="${category.id}">Delete</button>
+                    <button class="btn-edit" data-id="${category.id}" data-name="${category.name}">Edit</button>
                 `;
                 list.appendChild(listItem);
             });
@@ -62,6 +63,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+    
+
+    // ... (Your existing code to fetch and render the categories goes here) ...
+
+    // --- Event Listener for Editing a Category ---
+    categoryListContainer.addEventListener('click', async (event) => {
+        // Check if the clicked element is an Edit button
+        if (event.target.classList.contains('btn-edit')) {
+            const categoryId = event.target.dataset.id;
+            const currentName = event.target.dataset.name;
+            
+            // Ask the user for the new name
+            const newName = prompt('Edit category name:', currentName);
+
+            // Proceed if the user typed a name and it's different from the current one
+            if (newName && newName.trim() !== '' && newName !== currentName) {
+                try {
+                    const response = await fetch(`/api/categories/${categoryId}`, {
+                        method: 'PUT',
+                        headers: { 
+                            'Content-Type': 'application/json' 
+                        },
+                        body: JSON.stringify({ newName: newName.trim() }),
+                    });
+
+                    if (response.ok) {
+                        // Success! Refresh the page to show the updated name
+                        alert('Category updated successfully.');
+                        location.reload(); 
+                    } else {
+                        // Handle errors from the server (e.g., permissions)
+                        const result = await response.json();
+                        alert(`Error: ${result.message}`);
+                    }
+                } catch (error) {
+                    console.error('Error during update:', error);
+                    alert('Failed to connect to the server to update the category.');
+                }
+            }
+        }
+    
+});
 
     // Initial load
     renderCategories();
