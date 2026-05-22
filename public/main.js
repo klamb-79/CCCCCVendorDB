@@ -68,6 +68,7 @@ const renderVendors = (vendorsToRender) => {
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
         const selectedCategory = categoryFilter ? categoryFilter.value : '';
         const selectedCountry = countryFilter ? countryFilter.value : '';
+        const typeFilter = typeFilterGroup ? typeFilterGroup.querySelector('.active').dataset.type : 'All';
 
         const filteredVendors = allVendors.filter(vendor => {
             // 1. Check text match (name or category)
@@ -78,9 +79,11 @@ const renderVendors = (vendorsToRender) => {
             const matchesCategory = selectedCategory === "All" || vendor.category === selectedCategory;
             // 3. Check dropdown country match (Empty string means "All Countries")
             const matchesCountry = selectedCountry === "All" || vendor.country === selectedCountry;
-            console.log(`Vendor: ${vendor.name}, Matches Search: ${matchesSearch}, Matches Category: ${matchesCategory}, Matches Country: ${matchesCountry}`);
+            // 4. Check vendor type match
+            const matchesType = typeFilter === "All" || vendor.vendorType === typeFilter;
+            
             // Vendor must pass ALL tests to be shown
-            return matchesSearch && matchesCategory && matchesCountry;
+            return matchesSearch && matchesCategory && matchesCountry && matchesType;
         });
 
         // Re-render (Counter updates automatically here!)
@@ -99,45 +102,24 @@ const renderVendors = (vendorsToRender) => {
     if (countryFilter) {
         countryFilter.addEventListener('change', applyFilters);
     }
-    // if (searchInput) {
-    //     searchInput.addEventListener('input', (event) => {
-    //         const searchTerm = event.target.value.toLowerCase();
+    if (typeFilterGroup) {
+        typeFilterGroup.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target.tagName === 'BUTTON') {
+                // Update active state variable
+                activeTypeFilter = target.dataset.type;
+                console.log('Active Type Filter:', activeTypeFilter);
 
-    //         // Filter down the master array
-    //         const filteredVendors = allVendors.filter(vendor => {
-    //             return (
-    //                 vendor.name.toLowerCase().includes(searchTerm) ||
-    //                 vendor.category.toLowerCase().includes(searchTerm)
-    //             );
-    //         });
+                // Update button visual state
+                typeFilterGroup.querySelector('.active').classList.remove('active');
+                target.classList.add('active');
 
-    //         // Re-render with only the filtered items (re-calculates count instantly)
-    //         renderVendors(filteredVendors);
-    //     });
-    // }
-
-    // if (countryFilter) {
-    //     countryFilter.addEventListener('change', () => {
-    //         const selectedCategory = categoryFilter ? categoryFilter.value : '';
-            
-
-    //         const filteredVendors = allVendors.filter(vendor => {
-    //         // Check text match
-            
-    //         const catTextMatch = vendor.category
-    //         const matchesSearch = nameMatch || catTextMatch;
-
-    //         // Check category match (If "" is selected, treat it as a match for everything)
-    //         const matchesCategory = selectedCategory === "" || vendor.category === selectedCategory;
-
-    //         // Vendor must pass BOTH tests to be shown
-    //         return matchesSearch && matchesCategory;
-    //     });
-
-    //     // Re-render (Counter updates automatically!)
-    //     renderVendors(filteredVendors);
-    //     });
-    // }
+                // Re-apply filters with the new type filter
+                applyFilters();
+            }
+        });
+    }   
+    
 
     loadVendors();
 
