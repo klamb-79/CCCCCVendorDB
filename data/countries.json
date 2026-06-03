@@ -53,7 +53,7 @@
   },
   {
     "id": 1753828853213,
-    "name": "St. Kitts and Nevis"
+    "name": "St. Kitts & Nevis"
   },
   {
     "id": 1753828870366,
@@ -62,5 +62,21 @@
   {
     "id": 1779292574311,
     "name": "United States"
+  },
+  {
+    "id": 1779475988536,
+    "name": "UK"
+  },
+  {
+    "id": 1779479830731,
+    "name": "Islamabad"
+  },
+  {
+    "id": 1779479865883,
+    "name": "Spain"
+  },
+  {
+    "id": 1779479880102,
+    "name": "France"
   }
 ]
